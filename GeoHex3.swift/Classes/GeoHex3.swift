@@ -175,7 +175,7 @@ extension GeoHex3 {
         
         if String(h_dec9[0]).match(pattern: "[15]") &&
             String(h_dec9[1]).match(pattern: "[^125]") &&
-            (h_dec9.count >= 2 || String(h_dec9[2]).match(pattern: "[^125]")) {
+            (h_dec9.count > 2 && String(h_dec9[2]).match(pattern: "[^125]")) {
             if h_dec9[0] == "5" {
                 h_dec9 = "7" + h_dec9.substring(from: 1)
             } else if h_dec9[0] == "1" {
